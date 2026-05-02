@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>princy.shah@accenture.com</email>
+    <name>WhatsUp Queue</name>
+    <queueMembers>
+        <users>
+            <user>b2bmaintegration@00dbm00000fml7neau.ext</user>
+            <user>insightsintegration@00dbm00000fml7neau.ext</user>
+            <user>integration@00dbm00000fml7neau.com</user>
+            <user>epic.eec92c6c361e@orgfarm.salesforce.com</user>
+            <user>salesforceiqintegration@00dbm00000fml7neau.ext</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>FinanceBalanceSnapshot</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>FinanceTransaction</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Personal_Loan</fullName>
+  <label>Personal Loan</label>
+  <description>Record type for Personal Loan</description>
+  <active>true</active>
+  <available>true</available>
+  <default>false</default>
+</RecordType>

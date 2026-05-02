@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Message_Content__c</fullName>
+    <label>Message Content</label>
+    <description>The actual message text sent by the customer</description>
+    <inlineHelpText>Contains the customer's message in their preferred language (Hindi, English, or mixed)</inlineHelpText>
+    <type>LongTextArea</type>
+    <length>5000</length>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Select the type of financial account --></help>
+    <label><!-- Account Type --></label>
+    <name>Account_Type__c</name>
+    <picklistValues>
+        <masterLabel>AutoLoan</masterLabel>
+        <translation><!-- AutoLoan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CarLoan</masterLabel>
+        <translation><!-- CarLoan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CreditCard</masterLabel>
+        <translation><!-- CreditCard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CurrentAccount</masterLabel>
+        <translation><!-- CurrentAccount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FixedDeposit</masterLabel>
+        <translation><!-- FixedDeposit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HomeLoan</masterLabel>
+        <translation><!-- HomeLoan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mortgage</masterLabel>
+        <translation><!-- Mortgage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MutualFund</masterLabel>
+        <translation><!-- MutualFund --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PersonalLoan</masterLabel>
+        <translation><!-- PersonalLoan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RecurringDeposit</masterLabel>
+        <translation><!-- RecurringDeposit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SavingsAccount</masterLabel>
+        <translation><!-- SavingsAccount --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

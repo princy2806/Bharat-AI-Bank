@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DisputeFlag__c</fullName>
+    <label>Dispute Flag</label>
+    <description>Type of dispute flagged</description>
+    <inlineHelpText>Select the dispute reason if transaction is disputed</inlineHelpText>
+    <type>Picklist</type>
+    <required>false</required>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Unauthorized</fullName>
+                <default>false</default>
+                <label>Unauthorized</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>Service Not Received</fullName>
+                <default>false</default>
+                <label>Service Not Received</label>
+            </value>
+            <value>
+                <fullName>Wrong Amount</fullName>
+                <default>false</default>
+                <label>Wrong Amount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

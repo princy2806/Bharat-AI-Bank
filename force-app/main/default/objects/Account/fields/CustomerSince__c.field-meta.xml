@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomerSince__c</fullName>
+    <description>The date when the customer first became a customer of the bank</description>
+    <inlineHelpText>Enter the date when this customer opened their first account or product with the bank</inlineHelpText>
+    <label>Customer Since</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

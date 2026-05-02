@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of months remaining until loan maturity --></help>
+    <label><!-- Remaining Tenure (Months) --></label>
+    <name>RemainingTenureMonths__c</name>
+</CustomFieldTranslation>

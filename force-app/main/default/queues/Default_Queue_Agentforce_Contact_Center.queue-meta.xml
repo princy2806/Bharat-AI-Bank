@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Default Queue Agentforce Contact Center</name>
+    <queueMembers>
+        <users>
+            <user>banking_self_serve_agent@00dbm00000fml7n1099571450.ext</user>
+            <user>epic.eec92c6c361e@orgfarm.salesforce.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Default_Routing_Configuration_Agentforce_Contact_Center</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>MessagingSession</sobjectType>
+    </queueSobject>
+</Queue>

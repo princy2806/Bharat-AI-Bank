@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type__c</fullName>
+    <label>Account Type</label>
+    <description>Type of financial account</description>
+    <inlineHelpText>Select the type of financial account</inlineHelpText>
+    <type>Picklist</type>
+    <required>false</required>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+                <label>Credit Card</label>
+            </value>
+            <value>
+                <fullName>Savings Account</fullName>
+                <default>false</default>
+                <label>Savings Account</label>
+            </value>
+            <value>
+                <fullName>Current Account</fullName>
+                <default>false</default>
+                <label>Current Account</label>
+            </value>
+            <value>
+                <fullName>Home Loan</fullName>
+                <default>false</default>
+                <label>Home Loan</label>
+            </value>
+            <value>
+                <fullName>Personal Loan</fullName>
+                <default>false</default>
+                <label>Personal Loan</label>
+            </value>
+            <value>
+                <fullName>Car Loan</fullName>
+                <default>false</default>
+                <label>Car Loan</label>
+            </value>
+            <value>
+                <fullName>Mutual Fund</fullName>
+                <default>false</default>
+                <label>Mutual Fund</label>
+            </value>
+            <value>
+                <fullName>Fixed Deposit</fullName>
+                <default>false</default>
+                <label>Fixed Deposit</label>
+            </value>
+            <value>
+                <fullName>Recurring Deposit</fullName>
+                <default>false</default>
+                <label>Recurring Deposit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

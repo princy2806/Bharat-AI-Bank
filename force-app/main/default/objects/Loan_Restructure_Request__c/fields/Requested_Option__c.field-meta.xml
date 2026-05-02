@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Option__c</fullName>
+    <label>Requested Option</label>
+    <description>The restructuring option selected by the customer from the presented choices</description>
+    <inlineHelpText>Select the preferred restructuring option: Extend 1 Year, Extend 2 Years, or 3-Month Moratorium</inlineHelpText>
+    <type>Picklist</type>
+    <required>true</required>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Extend Tenure by 1 Year</fullName>
+                <default>false</default>
+                <label>Extend Tenure by 1 Year</label>
+            </value>
+            <value>
+                <fullName>Extend Tenure by 2 Years</fullName>
+                <default>false</default>
+                <label>Extend Tenure by 2 Years</label>
+            </value>
+            <value>
+                <fullName>3-Month Moratorium</fullName>
+                <default>false</default>
+                <label>3-Month Moratorium</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

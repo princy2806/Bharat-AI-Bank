@@ -1,0 +1,12 @@
+{
+  "name": "clientSite",
+  "label": "Client Site - Agentforce Hackathon",
+  "outputDir": "dist",
+  "entry": "src/index.html",
+  "routes": [
+    { "path": "/", "entry": "src/index.html" }
+  ],
+  "assets": [
+    { "glob": "src/**", "input": "src", "output": "/" }
+  ]
+}

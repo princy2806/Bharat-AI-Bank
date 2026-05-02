@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UiBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>58.0</apiVersion>
+  <label>Client Site - Agentforce Hackathon</label>
+  <description>Client-facing UI bundle scaffold for the hackathon project</description>
+  <outputDir>dist</outputDir>
+  <entry>src/index.html</entry>
+</UiBundle>

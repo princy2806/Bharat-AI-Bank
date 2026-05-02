@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_EMI__c</fullName>
+    <label>New EMI</label>
+    <description>The calculated new monthly EMI amount after restructuring</description>
+    <inlineHelpText>This field shows the new EMI amount based on the selected restructuring option</inlineHelpText>
+    <type>Currency</type>
+    <precision>18</precision>
+    <scale>2</scale>
+    <required>false</required>
+</CustomField>

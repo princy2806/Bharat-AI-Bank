@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCR_Extracted_Data__c</fullName>
+    <label>OCR Extracted Data</label>
+    <description>Data extracted from receipt photos using Einstein OCR for dispute validation</description>
+    <inlineHelpText>Automatically populated with merchant name, date, and amount extracted from uploaded receipt images</inlineHelpText>
+    <type>LongTextArea</type>
+    <length>32768</length>
+    <visibleLines>5</visibleLines>
+</CustomField>

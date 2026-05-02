@@ -1,0 +1,309 @@
+# ═══════════════════════════════════════════════════════════════════════════
+#  Agentforce Service Agent – Banking Topics & Actions
+#  Deploy via: Salesforce Setup → Einstein → Agentforce → Agents
+#  OR via Salesforce CLI:  sf agent generate definition
+# ═══════════════════════════════════════════════════════════════════════════
+
+agent:
+  name: Banking_Support_Agent
+  label: Digital Banking Support Agent
+  description: >
+    AI-powered banking support agent that securely verifies customers
+    using OTP and assists with account balance, statements, card status,
+    and loan details.
+  language: en_US
+  model: sfdc_ai__DefaultGPT4Omni   # GPT-4o via Einstein AI Gateway
+
+  # ─────────────────────────────────────────────────────────────────────────
+  #  SYSTEM PROMPT (Agent Instructions)
+  # ─────────────────────────────────────────────────────────────────────────
+  instructions: |
+    You are a professional AI Banking Support Agent for Digital Banking.
+    Follow these rules strictly:
+
+    1. ALWAYS verify the customer's identity before sharing any account data.
+    2. Collect: Customer ID, Registered Mobile, or Registered Email.
+    3. After finding the customer, generate and send an OTP.
+    4. Validate the OTP before proceeding to any banking service.
+    5. After 3 failed OTP attempts, lock the session and escalate.
+    6. NEVER reveal full account numbers, card numbers, or plain OTPs.
+    7. Only show masked data (last 4 digits).
+    8. If the customer asks for a human agent, escalate immediately.
+    9. End the session after completing the customer's request.
+    10. Maintain professional, secure, and empathetic communication.
+
+    Greeting:
+    "Welcome to Digital Banking Support. Please verify your identity to
+    continue. Kindly provide your Customer ID, registered mobile number,
+    or registered email ID."
+
+  # ─────────────────────────────────────────────────────────────────────────
+  #  TOPICS
+  # ─────────────────────────────────────────────────────────────────────────
+  topics:
+
+    # ── Topic 1: Customer Verification ──────────────────────────────────────
+    - name: Customer_Verification
+      label: Customer Verification
+      description: >
+        Handles identity verification using Customer ID, mobile, or email.
+        Triggers OTP generation and validates OTP before allowing access.
+      scope: >
+        Use this topic when the customer provides an identifier (Customer ID,
+        mobile number, or email) at the start of the conversation, or when
+        re-verification is required.
+      instructions: |
+        1. Ask for Customer ID, mobile, or email if not provided.
+        2. Call the Verify_Customer action to look up the customer.
+        3. If found, call Generate_OTP action.
+        4. Prompt the customer to enter the OTP.
+        5. Call Validate_OTP action with the entered OTP.
+        6. On success, greet by name and show the banking menu.
+        7. On 3 failures, inform the customer the session is locked.
+      actions:
+        - Verify_Customer
+        - Generate_OTP
+        - Validate_OTP
+
+    # ── Topic 2: Balance Inquiry ─────────────────────────────────────────────
+    - name: Balance_Inquiry
+      label: Account Balance Inquiry
+      description: >
+        Allows a verified customer to check their account balance.
+      scope: >
+        Use when a verified customer asks for their balance, available funds,
+        or account balance.
+      instructions: |
+        1. Confirm the customer is verified (session variable IsVerified = true).
+        2. Call the Get_Account_Balance action.
+        3. Return the balance in a friendly format.
+      actions:
+        - Get_Account_Balance
+
+    # ── Topic 3: Transaction History ─────────────────────────────────────────
+    - name: Transaction_History
+      label: Transaction History
+      description: >
+        Provides mini statement (last 5) or full account statement.
+      scope: >
+        Use when a verified customer asks for recent transactions,
+        mini statement, last 5 transactions, or full statement.
+      instructions: |
+        1. Confirm customer is verified.
+        2. For mini/last-5 requests: call Get_Recent_Transactions with limit=5.
+        3. For full statement: call Request_Full_Statement (sends to email).
+        4. Display results in a clear, numbered format.
+      actions:
+        - Get_Recent_Transactions
+        - Request_Full_Statement
+
+    # ── Topic 4: Card Services ────────────────────────────────────────────────
+    - name: Card_Services
+      label: Card Services
+      description: >
+        Provides debit/credit card status information.
+      scope: >
+        Use when a verified customer asks about their card status,
+        whether card is active, blocked, or expired.
+      instructions: |
+        1. Confirm customer is verified.
+        2. Call Get_Card_Status action.
+        3. Return status (Active/Blocked/Expired) with masked card number.
+        4. If blocked, advise customer to call helpline 1800-XXX-XXXX.
+      actions:
+        - Get_Card_Status
+
+    # ── Topic 5: Loan Inquiry ─────────────────────────────────────────────────
+    - name: Loan_Inquiry
+      label: Loan Details
+      description: >
+        Provides active loan balance and EMI due date.
+      scope: >
+        Use when a verified customer asks about their loan, EMI,
+        outstanding amount, or loan balance.
+      instructions: |
+        1. Confirm customer is verified.
+        2. Call Get_Loan_Details action.
+        3. Return loan balance and next EMI due date.
+      actions:
+        - Get_Loan_Details
+
+    # ── Topic 6: Human Escalation ─────────────────────────────────────────────
+    - name: Human_Escalation
+      label: Human Agent Escalation
+      description: >
+        Transfers the customer to a live banking representative.
+      scope: >
+        Use when the customer explicitly asks for a human, agent,
+        representative, or when the session is locked after failed OTPs.
+      instructions: |
+        1. Acknowledge the request warmly.
+        2. Call Escalate_To_Human action to transfer the chat.
+        3. Inform: "I'm connecting you with a banking representative now."
+      actions:
+        - Escalate_To_Human
+
+  # ─────────────────────────────────────────────────────────────────────────
+  #  ACTIONS
+  # ─────────────────────────────────────────────────────────────────────────
+  actions:
+
+    - name: Verify_Customer
+      label: Verify Banking Customer
+      type: FlowAction           # Calls Apex via InvocableMethod
+      description: >
+        Looks up a customer by Customer ID, mobile, or email.
+        Returns customerRecordId, masked contact, and response message.
+      flowApiName: BankingCustomerService
+      inputs:
+        - name: inputValue
+          label: Customer Identifier
+          type: String
+          required: true
+          description: Customer ID, mobile number, or email address
+      outputs:
+        - name: customerFound
+          type: Boolean
+        - name: customerRecordId
+          type: String
+        - name: maskedContact
+          type: String
+        - name: responseMessage
+          type: String
+        - name: isLocked
+          type: Boolean
+
+    - name: Generate_OTP
+      label: Generate and Send OTP
+      type: FlowAction
+      description: >
+        Generates a 6-digit OTP, stores hashed value on customer record,
+        and fires platform event to trigger SMS/email delivery.
+      flowApiName: BankingOTPService
+      inputs:
+        - name: customerRecordId
+          type: String
+          required: true
+      outputs:
+        - name: otpSent
+          type: Boolean
+        - name: responseMessage
+          type: String
+
+    - name: Validate_OTP
+      label: Validate Customer OTP
+      type: FlowAction
+      description: >
+        Validates the OTP entered by the customer. Tracks failed attempts.
+        Locks account after 3 consecutive failures.
+      flowApiName: BankingOTPService.validateOTP
+      inputs:
+        - name: customerRecordId
+          type: String
+          required: true
+        - name: enteredOTP
+          type: String
+          required: true
+      outputs:
+        - name: isValid
+          type: Boolean
+        - name: isExpired
+          type: Boolean
+        - name: isLocked
+          type: Boolean
+        - name: attemptsRemaining
+          type: Integer
+        - name: responseMessage
+          type: String
+
+    - name: Get_Account_Balance
+      label: Get Account Balance
+      type: FlowAction
+      description: Returns masked account balance for a verified customer.
+      flowApiName: BankingAccountService.getBalance
+      inputs:
+        - name: customerRecordId
+          type: String
+          required: true
+      outputs:
+        - name: availableBalance
+          type: String
+        - name: responseMessage
+          type: String
+
+    - name: Get_Recent_Transactions
+      label: Get Recent Transactions
+      type: FlowAction
+      description: Returns last N transactions for a verified customer.
+      flowApiName: BankingAccountService.getTransactions
+      inputs:
+        - name: customerRecordId
+          type: String
+          required: true
+        - name: numberOfTransactions
+          type: Integer
+          description: Default 5. Use 5 for mini statement.
+      outputs:
+        - name: formattedStatement
+          type: String
+        - name: responseMessage
+          type: String
+
+    - name: Request_Full_Statement
+      label: Request Full Account Statement
+      type: FlowAction
+      description: Queues full account statement delivery to registered email.
+      flowApiName: BankingAccountService.requestFullStatement
+      inputs:
+        - name: customerRecordId
+          type: String
+          required: true
+      outputs:
+        - name: responseMessage
+          type: String
+
+    - name: Get_Card_Status
+      label: Get Card Status
+      type: FlowAction
+      description: Returns debit/credit card status with masked card number.
+      flowApiName: BankingAccountService.getCardStatus
+      inputs:
+        - name: customerRecordId
+          type: String
+          required: true
+      outputs:
+        - name: cardStatus
+          type: String
+        - name: maskedCardNumber
+          type: String
+        - name: responseMessage
+          type: String
+
+    - name: Get_Loan_Details
+      label: Get Loan Details
+      type: FlowAction
+      description: Returns active loan balance and EMI due date.
+      flowApiName: BankingAccountService.getLoanDetails
+      inputs:
+        - name: customerRecordId
+          type: String
+          required: true
+      outputs:
+        - name: loanBalance
+          type: String
+        - name: emiDueDate
+          type: String
+        - name: responseMessage
+          type: String
+
+    - name: Escalate_To_Human
+      label: Escalate to Human Agent
+      type: StandardAction        # Built-in Salesforce Service action
+      description: >
+        Transfers the chat session to a live Service Cloud representative.
+      standardActionName: RouteWorkToAgent
+      inputs:
+        - name: routingType
+          value: MostAvailable
+        - name: queueName
+          value: Banking_Support_Queue

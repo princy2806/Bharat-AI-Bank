@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount__c</fullName>
+    <label>Amount</label>
+    <description>The transaction amount in Indian Rupees (INR)</description>
+    <inlineHelpText>Enter the transaction amount including any applicable taxes. Use positive values for charges and negative for refunds.</inlineHelpText>
+    <type>Currency</type>
+    <precision>18</precision>
+    <scale>2</scale>
+    <required>true</required>
+</CustomField>

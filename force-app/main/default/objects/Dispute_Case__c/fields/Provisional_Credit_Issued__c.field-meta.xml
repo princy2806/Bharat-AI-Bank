@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provisional_Credit_Issued__c</fullName>
+    <label>Provisional Credit Issued</label>
+    <description>Indicates whether provisional credit has been issued to the customer while the dispute is under investigation</description>
+    <inlineHelpText>Check this box when provisional credit is issued to prevent interest charges during investigation</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+</CustomField>

@@ -1,0 +1,21 @@
+{
+  "required" : [ "contactEmail", "idpConfigurationIdOrName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "contactEmail" : {
+      "title" : "contactEmail",
+      "description" : "User provided contact email",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "idpConfigurationIdOrName" : {
+      "title" : "idpConfigurationIdOrName",
+      "description" : "Agent decided idpConfigurationIdOrName",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

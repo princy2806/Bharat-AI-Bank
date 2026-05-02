@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OTPVerified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Latest OTP verification status</description>
+    <inlineHelpText>Indicates if last OTP was successfully verified</inlineHelpText>
+    <label>OTP Verified</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Language_Used__c</fullName>
+    <label>Language Used</label>
+    <description>The language detected in the customer's message</description>
+    <inlineHelpText>Automatically detected: English, Hindi, or Mixed (Hindi-English)</inlineHelpText>
+    <type>Picklist</type>
+    <required>false</required>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>English</fullName>
+                <default>false</default>
+                <label>English</label>
+            </value>
+            <value>
+                <fullName>Hindi</fullName>
+                <default>false</default>
+                <label>Hindi</label>
+            </value>
+            <value>
+                <fullName>Mixed</fullName>
+                <default>true</default>
+                <label>Mixed (Hindi-English)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

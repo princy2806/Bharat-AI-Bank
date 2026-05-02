@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsDisputed__c</fullName>
+    <label>Is Disputed</label>
+    <description>Indicates if transaction is disputed</description>
+    <inlineHelpText>Check if customer has disputed this transaction</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+</CustomField>

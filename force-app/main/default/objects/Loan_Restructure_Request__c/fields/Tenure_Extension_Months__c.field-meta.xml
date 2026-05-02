@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenure_Extension_Months__c</fullName>
+    <label>Tenure Extension (Months)</label>
+    <description>Number of months the loan tenure is being extended</description>
+    <inlineHelpText>Enter 12 for 1-year extension, 24 for 2-year extension, or 0 for moratorium options</inlineHelpText>
+    <type>Number</type>
+    <precision>4</precision>
+    <scale>0</scale>
+    <required>false</required>
+</CustomField>

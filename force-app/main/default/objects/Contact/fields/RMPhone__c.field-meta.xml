@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMPhone__c</fullName>
+    <description>Relationship Manager&apos;s phone number</description>
+    <inlineHelpText>Enter the RM&apos;s contact phone number</inlineHelpText>
+    <label>RM Phone</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Phone</type>
+</CustomField>

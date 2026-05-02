@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DocsOnFile__c</fullName>
+    <label>Docs On File</label>
+    <description>Indicates if KYC documents are on file</description>
+    <inlineHelpText>Check if all required KYC documents are verified and on file</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+</CustomField>

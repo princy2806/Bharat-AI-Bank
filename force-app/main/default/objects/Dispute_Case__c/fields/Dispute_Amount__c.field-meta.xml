@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dispute_Amount__c</fullName>
+    <label>Dispute Amount</label>
+    <description>The amount being disputed by the customer in INR</description>
+    <inlineHelpText>Enter the disputed amount. This should match the transaction amount for full disputes.</inlineHelpText>
+    <type>Currency</type>
+    <precision>18</precision>
+    <scale>2</scale>
+    <required>true</required>
+</CustomField>
