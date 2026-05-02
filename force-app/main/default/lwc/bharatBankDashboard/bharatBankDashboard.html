@@ -1,0 +1,451 @@
+<!-- bharatBankDashboard.html -->
+<template>
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO WELCOME BANNER
+    ══════════════════════════════════════════════════════ -->
+    <section class="bb-hero">
+        <div class="bb-hero__bg-orb bb-hero__bg-orb--1"></div>
+        <div class="bb-hero__bg-orb bb-hero__bg-orb--2"></div>
+        <div class="bb-hero__bg-orb bb-hero__bg-orb--3"></div>
+
+        <div class="bb-hero__inner">
+            <!-- Left: Text + CTA -->
+            <div class="bb-hero__text">
+                <div class="bb-hero__pill">
+                    <span class="bb-pill__dot"></span>
+                    AI-Powered Banking &nbsp;&#183;&nbsp; Agentforce
+                </div>
+                <h1 class="bb-hero__h1">
+                    Namaste, Welcome to<br/>
+                    <span class="bb-hero__brand">Bharat AI Bank</span>
+                </h1>
+                <p class="bb-hero__sub">
+                    Your intelligent banking companion — check balances, dispute transactions,
+                    restructure loans &amp; get 24/7 AI support instantly.
+                </p>
+                <div class="bb-hero__btns">
+                    <button class="bb-btn bb-btn--gold" onclick={openChat}>
+                        <span class="bb-btn__icon">&#129302;</span>
+                        Chat with AI Agent
+                    </button>
+                    <button class="bb-btn bb-btn--ghost" onclick={viewAccounts}>
+                        <span class="bb-btn__icon">&#128196;</span>
+                        My Accounts
+                    </button>
+                </div>
+                <div class="bb-hero__badges">
+                    <span class="bb-badge">&#128274; 256-bit SSL</span>
+                    <span class="bb-badge">&#9989; RBI Regulated</span>
+                    <span class="bb-badge">&#127960; DICGC Insured</span>
+                </div>
+            </div>
+
+            <!-- Right: Chat preview card -->
+            <div class="bb-hero__card">
+                <div class="bb-chat-card">
+                    <div class="bb-chat-card__header">
+                        <div class="bb-chat-card__avatar">
+                            <span>&#129302;</span>
+                        </div>
+                        <div class="bb-chat-card__info">
+                            <div class="bb-chat-card__name">Bharat AI Agent</div>
+                            <div class="bb-chat-card__online">
+                                <span class="bb-online-dot"></span> Online &amp; Ready
+                            </div>
+                        </div>
+                        <div class="bb-chat-card__signal">
+                            <div class="bb-signal-bar"></div>
+                            <div class="bb-signal-bar"></div>
+                            <div class="bb-signal-bar"></div>
+                        </div>
+                    </div>
+                    <div class="bb-chat-card__body">
+                        <div class="bb-msg bb-msg--bot">
+                            &#128075; Namaste! How can I help you today?
+                        </div>
+                        <div class="bb-msg bb-msg--user">
+                            Show my account balance
+                        </div>
+                        <div class="bb-msg bb-msg--bot">
+                            &#128181; Your savings balance is <strong>₹2,45,830</strong>. Credit card due: <strong>₹18,450</strong>
+                        </div>
+                        <div class="bb-msg bb-msg--user">
+                            File a dispute for ₹5,999
+                        </div>
+                        <div class="bb-msg bb-msg--bot bb-msg--typing">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="bb-chat-card__footer">
+                        <div class="bb-chat-card__input">Ask anything about your account...</div>
+                        <button class="bb-chat-card__send" onclick={openChat}>&#10148;</button>
+                    </div>
+                </div>
+
+                <!-- Floating stat chips -->
+                <div class="bb-stat-chip bb-stat-chip--1">
+                    <div class="bb-stat-chip__val">₹2.45L</div>
+                    <div class="bb-stat-chip__lbl">Savings</div>
+                </div>
+                <div class="bb-stat-chip bb-stat-chip--2">
+                    <div class="bb-stat-chip__icon">&#9889;</div>
+                    <div class="bb-stat-chip__lbl">Instant Dispute</div>
+                </div>
+                <div class="bb-stat-chip bb-stat-chip--3">
+                    <div class="bb-stat-chip__val">8.65%</div>
+                    <div class="bb-stat-chip__lbl">Home Loan</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave divider -->
+        <div class="bb-hero__wave">
+            <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0,35 C240,70 480,0 720,35 C960,70 1200,0 1440,35 L1440,70 L0,70 Z" fill="#f2f5fa"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         ACCOUNT CARDS
+    ══════════════════════════════════════════════════════ -->
+    <section class="bb-section bb-section--cards">
+        <div class="bb-wrap">
+            <div class="bb-section__head">
+                <div>
+                    <h2 class="bb-section__title">My Accounts</h2>
+                    <p class="bb-section__sub">All your accounts at a glance</p>
+                </div>
+                <button class="bb-link-btn" onclick={viewAccounts}>View All &#8250;</button>
+            </div>
+            <div class="bb-acct-grid">
+
+                <!-- ── Savings Account ── -->
+                <div class="bb-acct-card bb-acct-card--savings">
+                    <div class="bb-acct-card__shine"></div>
+                    <div class="bb-acct-card__top">
+                        <div class="bb-acct-card__icon-wrap">
+                            <span class="bb-acct-card__icon">&#127984;</span>
+                        </div>
+                        <div class="bb-acct-card__type-block">
+                            <div class="bb-acct-card__type">Savings Account</div>
+                            <div class="bb-acct-card__num">•••• •••• 4892</div>
+                        </div>
+                        <div class="bb-acct-card__status">
+                            <span class="bb-status-dot"></span> Active
+                        </div>
+                    </div>
+                    <div class="bb-acct-card__balance-block">
+                        <div class="bb-acct-card__lbl">Available Balance</div>
+                        <div class="bb-acct-card__amount">₹2,45,830<span class="bb-acct-card__paise">.00</span></div>
+                    </div>
+                    <div class="bb-acct-card__divider"></div>
+                    <div class="bb-acct-card__actions">
+                        <button class="bb-acct-btn" onclick={handleBalance}>&#128181; Balance</button>
+                        <button class="bb-acct-btn" onclick={handleStatement}>&#128203; Statement</button>
+                    </div>
+                </div>
+
+                <!-- ── Platinum Credit Card ── -->
+                <div class="bb-acct-card bb-acct-card--credit">
+                    <div class="bb-acct-card__shine"></div>
+                    <div class="bb-acct-card__top">
+                        <div class="bb-acct-card__icon-wrap">
+                            <span class="bb-acct-card__icon">&#128179;</span>
+                        </div>
+                        <div class="bb-acct-card__type-block">
+                            <div class="bb-acct-card__type">Platinum Credit Card</div>
+                            <div class="bb-acct-card__num">•••• •••• •••• 7231</div>
+                        </div>
+                        <div class="bb-acct-card__status">
+                            <span class="bb-status-dot"></span> Active
+                        </div>
+                    </div>
+                    <div class="bb-acct-card__balance-block">
+                        <div class="bb-acct-card__lbl">Outstanding Due</div>
+                        <div class="bb-acct-card__amount">₹18,450<span class="bb-acct-card__paise">.00</span></div>
+                        <div class="bb-acct-card__meta">Limit ₹3,00,000 &nbsp;|&nbsp; Available ₹2,81,550</div>
+                    </div>
+                    <div class="bb-acct-card__divider"></div>
+                    <div class="bb-acct-card__actions">
+                        <button class="bb-acct-btn" onclick={handleDispute}>&#128680; Dispute</button>
+                        <button class="bb-acct-btn" onclick={handleStatement}>&#128196; Statement</button>
+                    </div>
+                </div>
+
+                <!-- ── Home Loan ── -->
+                <div class="bb-acct-card bb-acct-card--loan">
+                    <div class="bb-acct-card__shine"></div>
+                    <div class="bb-acct-card__top">
+                        <div class="bb-acct-card__icon-wrap">
+                            <span class="bb-acct-card__icon">&#127968;</span>
+                        </div>
+                        <div class="bb-acct-card__type-block">
+                            <div class="bb-acct-card__type">Home Loan</div>
+                            <div class="bb-acct-card__num">HL-2024-001892</div>
+                        </div>
+                        <div class="bb-acct-card__status">
+                            <span class="bb-status-dot"></span> Active
+                        </div>
+                    </div>
+                    <div class="bb-acct-card__balance-block">
+                        <div class="bb-acct-card__lbl">Outstanding Principal</div>
+                        <div class="bb-acct-card__amount">₹28,65,000<span class="bb-acct-card__paise">.00</span></div>
+                        <div class="bb-acct-card__meta">EMI ₹28,500/mo &nbsp;|&nbsp; Rate 8.65% p.a.</div>
+                    </div>
+                    <div class="bb-acct-card__divider"></div>
+                    <div class="bb-acct-card__actions">
+                        <button class="bb-acct-btn" onclick={handleEMI}>&#128200; EMI Options</button>
+                        <button class="bb-acct-btn" onclick={handleCallback}>&#128222; RM Call</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         QUICK ACTIONS
+    ══════════════════════════════════════════════════════ -->
+    <section class="bb-section bb-section--actions">
+        <div class="bb-wrap">
+            <div class="bb-section__head">
+                <div>
+                    <h2 class="bb-section__title">Quick Actions</h2>
+                    <p class="bb-section__sub">One tap — AI handles the rest</p>
+                </div>
+            </div>
+            <div class="bb-qa-grid">
+                <button class="bb-qa-tile" onclick={handleBalance}>
+                    <div class="bb-qa-tile__orb bb-qa-tile__orb--blue">&#128181;</div>
+                    <div class="bb-qa-tile__label">Account Balance</div>
+                    <div class="bb-qa-tile__hint">All balances</div>
+                </button>
+                <button class="bb-qa-tile" onclick={handleStatement}>
+                    <div class="bb-qa-tile__orb bb-qa-tile__orb--green">&#128203;</div>
+                    <div class="bb-qa-tile__label">Mini Statement</div>
+                    <div class="bb-qa-tile__hint">Last 5 transactions</div>
+                </button>
+                <button class="bb-qa-tile bb-qa-tile--alert" onclick={handleDispute}>
+                    <div class="bb-qa-tile__orb bb-qa-tile__orb--red">&#128680;</div>
+                    <div class="bb-qa-tile__label">File Dispute</div>
+                    <div class="bb-qa-tile__hint">Fraud / Unauthorized</div>
+                </button>
+                <button class="bb-qa-tile" onclick={handleEMI}>
+                    <div class="bb-qa-tile__orb bb-qa-tile__orb--purple">&#128200;</div>
+                    <div class="bb-qa-tile__label">EMI Restructuring</div>
+                    <div class="bb-qa-tile__hint">3 options instantly</div>
+                </button>
+                <button class="bb-qa-tile" onclick={handleCallback}>
+                    <div class="bb-qa-tile__orb bb-qa-tile__orb--orange">&#128222;</div>
+                    <div class="bb-qa-tile__label">RM Callback</div>
+                    <div class="bb-qa-tile__hint">Schedule a call</div>
+                </button>
+                <button class="bb-qa-tile bb-qa-tile--ai" onclick={openChat}>
+                    <div class="bb-qa-tile__orb bb-qa-tile__orb--navy">&#129302;</div>
+                    <div class="bb-qa-tile__label">AI Assistant</div>
+                    <div class="bb-qa-tile__hint">Ask anything</div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         RECENT TRANSACTIONS
+    ══════════════════════════════════════════════════════ -->
+    <section class="bb-section bb-section--txn">
+        <div class="bb-wrap">
+            <div class="bb-section__head">
+                <div>
+                    <h2 class="bb-section__title">Recent Transactions</h2>
+                    <p class="bb-section__sub">April 2026</p>
+                </div>
+                <button class="bb-link-btn" onclick={handleStatement}>View All &#8250;</button>
+            </div>
+
+            <!-- Alert banner -->
+            <div class="bb-alert-banner">
+                <div class="bb-alert-banner__left">
+                    <span class="bb-alert-banner__icon">&#9888;&#65039;</span>
+                    <div>
+                        <div class="bb-alert-banner__title">Suspicious Transaction Detected</div>
+                        <div class="bb-alert-banner__desc">₹5,999 on 19 Apr — Unknown International Merchant. Not you?</div>
+                    </div>
+                </div>
+                <button class="bb-btn bb-btn--red-sm" onclick={handleDispute}>Dispute Now &#8250;</button>
+            </div>
+
+            <!-- Transaction list -->
+            <div class="bb-txn-list">
+
+                <div class="bb-txn-item bb-txn-item--flagged">
+                    <div class="bb-txn-item__icon-wrap bb-txn-item__icon-wrap--red">&#9888;&#65039;</div>
+                    <div class="bb-txn-item__info">
+                        <div class="bb-txn-item__desc">Unknown Merchant — International</div>
+                        <div class="bb-txn-item__meta">19 Apr 2026 &nbsp;&#183;&nbsp; Credit Card &nbsp;&#183;&nbsp; <span class="bb-flagged-label">Suspicious</span></div>
+                    </div>
+                    <div class="bb-txn-item__right">
+                        <div class="bb-txn-item__amt bb-txn-item__amt--dr">−₹5,999</div>
+                        <button class="bb-txn-dispute-btn" onclick={handleDispute}>Dispute</button>
+                    </div>
+                </div>
+
+                <div class="bb-txn-item">
+                    <div class="bb-txn-item__icon-wrap bb-txn-item__icon-wrap--blue">&#128722;</div>
+                    <div class="bb-txn-item__info">
+                        <div class="bb-txn-item__desc">Amazon.in — Online Shopping</div>
+                        <div class="bb-txn-item__meta">22 Apr 2026 &nbsp;&#183;&nbsp; Credit Card</div>
+                    </div>
+                    <div class="bb-txn-item__right">
+                        <div class="bb-txn-item__amt bb-txn-item__amt--dr">−₹4,299</div>
+                    </div>
+                </div>
+
+                <div class="bb-txn-item">
+                    <div class="bb-txn-item__icon-wrap bb-txn-item__icon-wrap--orange">&#127829;</div>
+                    <div class="bb-txn-item__info">
+                        <div class="bb-txn-item__desc">Swiggy — Food Delivery</div>
+                        <div class="bb-txn-item__meta">20 Apr 2026 &nbsp;&#183;&nbsp; Savings Account</div>
+                    </div>
+                    <div class="bb-txn-item__right">
+                        <div class="bb-txn-item__amt bb-txn-item__amt--dr">−₹650</div>
+                    </div>
+                </div>
+
+                <div class="bb-txn-item">
+                    <div class="bb-txn-item__icon-wrap bb-txn-item__icon-wrap--green">&#128179;</div>
+                    <div class="bb-txn-item__info">
+                        <div class="bb-txn-item__desc">Credit Card Bill Payment</div>
+                        <div class="bb-txn-item__meta">15 Apr 2026 &nbsp;&#183;&nbsp; Savings Account</div>
+                    </div>
+                    <div class="bb-txn-item__right">
+                        <div class="bb-txn-item__amt bb-txn-item__amt--cr">+₹15,000</div>
+                    </div>
+                </div>
+
+                <div class="bb-txn-item">
+                    <div class="bb-txn-item__icon-wrap bb-txn-item__icon-wrap--purple">&#9992;&#65039;</div>
+                    <div class="bb-txn-item__info">
+                        <div class="bb-txn-item__desc">MakeMyTrip — Flight Booking</div>
+                        <div class="bb-txn-item__meta">12 Apr 2026 &nbsp;&#183;&nbsp; Credit Card</div>
+                    </div>
+                    <div class="bb-txn-item__right">
+                        <div class="bb-txn-item__amt bb-txn-item__amt--dr">−₹8,500</div>
+                    </div>
+                </div>
+
+                <div class="bb-txn-item">
+                    <div class="bb-txn-item__icon-wrap bb-txn-item__icon-wrap--teal">&#128188;</div>
+                    <div class="bb-txn-item__info">
+                        <div class="bb-txn-item__desc">Salary Credit — TechCorp India</div>
+                        <div class="bb-txn-item__meta">1 Apr 2026 &nbsp;&#183;&nbsp; Savings Account</div>
+                    </div>
+                    <div class="bb-txn-item__right">
+                        <div class="bb-txn-item__amt bb-txn-item__amt--cr">+₹95,000</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         AI FEATURES
+    ══════════════════════════════════════════════════════ -->
+    <section class="bb-section bb-section--features">
+        <div class="bb-wrap">
+            <div class="bb-features-header">
+                <div class="bb-features-header__pill">&#129302; Agentforce AI</div>
+                <h2 class="bb-features-header__title">Why Bharat AI Bank?</h2>
+                <p class="bb-features-header__sub">Banking that understands you — in any language, any time</p>
+            </div>
+            <div class="bb-feat-grid">
+                <div class="bb-feat-card">
+                    <div class="bb-feat-card__icon-wrap bb-feat-card__icon-wrap--blue">&#129302;</div>
+                    <h3 class="bb-feat-card__title">24/7 AI Agent</h3>
+                    <p class="bb-feat-card__desc">Instant support in English, Hindi &amp; more. No waiting. No hold music.</p>
+                    <div class="bb-feat-card__tag">Multilingual</div>
+                </div>
+                <div class="bb-feat-card">
+                    <div class="bb-feat-card__icon-wrap bb-feat-card__icon-wrap--red">&#9889;</div>
+                    <h3 class="bb-feat-card__title">Instant Dispute Filing</h3>
+                    <p class="bb-feat-card__desc">File a credit card dispute and receive provisional credit in seconds.</p>
+                    <div class="bb-feat-card__tag">Provisional Credit Issued</div>
+                </div>
+                <div class="bb-feat-card">
+                    <div class="bb-feat-card__icon-wrap bb-feat-card__icon-wrap--green">&#128200;</div>
+                    <h3 class="bb-feat-card__title">Smart EMI Restructuring</h3>
+                    <p class="bb-feat-card__desc">3 tailored loan options calculated in real-time. No branch visit needed.</p>
+                    <div class="bb-feat-card__tag">AI-Powered Calculations</div>
+                </div>
+                <div class="bb-feat-card">
+                    <div class="bb-feat-card__icon-wrap bb-feat-card__icon-wrap--gold">&#128274;</div>
+                    <h3 class="bb-feat-card__title">Bank-Grade Security</h3>
+                    <p class="bb-feat-card__desc">256-bit encryption. RBI compliant. DICGC insured up to ₹5 lakhs.</p>
+                    <div class="bb-feat-card__tag">RBI Certified</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════════════════ -->
+    <footer class="bb-footer">
+        <div class="bb-wrap">
+            <div class="bb-footer__grid">
+                <div class="bb-footer__brand">
+                    <div class="bb-footer__logo">
+                        <span class="bb-footer__logo-icon">&#9670;</span>
+                        Bharat AI Bank
+                    </div>
+                    <p class="bb-footer__tagline">Smarter Banking, Powered by AI</p>
+                    <p class="bb-footer__reg">Regulated by Reserve Bank of India<br/>DICGC Member Bank &nbsp;|&nbsp; CIN: U65920MH2020</p>
+                    <div class="bb-footer__trust">
+                        <span>&#128274;</span>
+                        <span>&#9989;</span>
+                        <span>&#127960;</span>
+                    </div>
+                </div>
+                <div class="bb-footer__col">
+                    <div class="bb-footer__col-title">Products</div>
+                    <a href="#" class="bb-footer__lnk">Savings Account</a>
+                    <a href="#" class="bb-footer__lnk">Credit Cards</a>
+                    <a href="#" class="bb-footer__lnk">Home Loans</a>
+                    <a href="#" class="bb-footer__lnk">Personal Loans</a>
+                    <a href="#" class="bb-footer__lnk">Fixed Deposits</a>
+                </div>
+                <div class="bb-footer__col">
+                    <div class="bb-footer__col-title">AI Services</div>
+                    <a href="#" class="bb-footer__lnk" onclick={openChat}>AI Banking Agent</a>
+                    <a href="#" class="bb-footer__lnk" onclick={handleDispute}>File a Dispute</a>
+                    <a href="#" class="bb-footer__lnk" onclick={handleEMI}>EMI Restructuring</a>
+                    <a href="#" class="bb-footer__lnk" onclick={handleCallback}>RM Callback</a>
+                    <a href="#" class="bb-footer__lnk">Branch Locator</a>
+                </div>
+                <div class="bb-footer__col">
+                    <div class="bb-footer__col-title">Help &amp; Security</div>
+                    <a href="#" class="bb-footer__lnk">Privacy Policy</a>
+                    <a href="#" class="bb-footer__lnk">Terms of Service</a>
+                    <a href="#" class="bb-footer__lnk">Security Tips</a>
+                    <a href="#" class="bb-footer__lnk">Report Fraud</a>
+                </div>
+            </div>
+            <div class="bb-footer__bottom">
+                <span>© 2026 Bharat AI Bank. All rights reserved.</span>
+                <span>&#128222; Helpline: 1800-XXX-XXXX (Toll Free, 24/7)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══════════════════════════════════════════════════════
+         FLOATING AI CHAT BUTTON
+    ══════════════════════════════════════════════════════ -->
+    <button class="bb-fab" onclick={openChat} title="Chat with AI Agent">
+        <span class="bb-fab__icon">&#129302;</span>
+        <span class="bb-fab__label">AI Agent</span>
+        <span class="bb-fab__pulse"></span>
+    </button>
+
+</template>

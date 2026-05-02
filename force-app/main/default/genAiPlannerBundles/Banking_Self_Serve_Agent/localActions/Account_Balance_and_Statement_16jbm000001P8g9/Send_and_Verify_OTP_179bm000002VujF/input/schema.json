@@ -1,0 +1,28 @@
+{
+  "required" : [ "action", "contactEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "action" : {
+      "title" : "Action (SEND or VERIFY)",
+      "description" : "If user provide email than Set action as 'SEND' and once user provide OTP then set action as 'VERIFY'",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "contactEmail" : {
+      "title" : "Customer Email",
+      "description" : "Set Customer Email",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "customerOTP" : {
+      "title" : "OTP Entered by Customer",
+      "description" : "Set Customer OTP",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

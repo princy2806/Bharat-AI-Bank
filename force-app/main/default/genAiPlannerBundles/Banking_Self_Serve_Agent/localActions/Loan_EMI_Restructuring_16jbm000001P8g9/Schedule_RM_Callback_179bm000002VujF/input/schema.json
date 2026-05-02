@@ -1,0 +1,42 @@
+{
+  "required" : [ "contactEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "contactEmail" : {
+      "title" : "Customer Email",
+      "description" : "contact email of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "selectedOption" : {
+      "title" : "Selected Option or Topic",
+      "description" : "the restructuring option the customer selected or topic they want to discuss with the RM",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "preferredDate" : {
+      "title" : "Preferred Date",
+      "description" : "preferred callback date in YYYY-MM-DD format",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "preferredTime" : {
+      "title" : "Preferred Time",
+      "description" : "preferred callback time e.g. 10:00 AM",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "contextNotes" : {
+      "title" : "Context Notes for RM",
+      "description" : "additional context or notes to brief the Relationship Manager",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

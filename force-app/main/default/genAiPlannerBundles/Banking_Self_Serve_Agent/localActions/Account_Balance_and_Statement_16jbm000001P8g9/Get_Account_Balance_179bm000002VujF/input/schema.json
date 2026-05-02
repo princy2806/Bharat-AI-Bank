@@ -1,0 +1,14 @@
+{
+  "required" : [ "contactEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "contactEmail" : {
+      "title" : "Customer Email",
+      "description" : "contact email",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

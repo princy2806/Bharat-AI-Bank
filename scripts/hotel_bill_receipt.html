@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grand Meridian Hotel – Tax Invoice</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      color: #222;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+    .invoice {
+      background: #fff;
+      width: 750px;
+      padding: 40px 50px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 3px solid #1a3a5c;
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+    .hotel-name {
+      font-size: 26px;
+      font-weight: 900;
+      color: #1a3a5c;
+      letter-spacing: 1px;
+    }
+    .hotel-tagline { font-size: 11px; color: #666; margin-top: 2px; }
+    .hotel-address { font-size: 11px; color: #444; margin-top: 6px; line-height: 1.6; }
+    .hotel-contact { font-size: 11px; color: #444; }
+
+    .invoice-meta { text-align: right; }
+    .invoice-meta .badge {
+      background: #1a3a5c;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 6px 16px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .invoice-meta table { margin-left: auto; font-size: 12px; }
+    .invoice-meta td { padding: 2px 4px; }
+    .invoice-meta td:first-child { color: #666; text-align: right; }
+    .invoice-meta td:last-child { font-weight: bold; text-align: left; padding-left: 10px; }
+
+    /* ── Guest Info ── */
+    .guest-section {
+      display: flex;
+      justify-content: space-between;
+      background: #f7f9fc;
+      border: 1px solid #d8e4f0;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+    }
+    .guest-block h4 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 5px; letter-spacing: 1px; }
+    .guest-block p { font-size: 13px; font-weight: bold; color: #1a3a5c; line-height: 1.8; }
+    .guest-block span { font-weight: normal; color: #333; }
+
+    /* ── Charges Table ── */
+    .charges-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1a3a5c;
+      font-weight: bold;
+      margin-bottom: 8px;
+      border-left: 4px solid #c8a84b;
+      padding-left: 8px;
+    }
+    table.charges {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 12.5px;
+    }
+    table.charges thead tr {
+      background: #1a3a5c;
+      color: #fff;
+    }
+    table.charges thead th {
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+    table.charges thead th:last-child { text-align: right; }
+    table.charges tbody tr { border-bottom: 1px solid #e8edf2; }
+    table.charges tbody tr:nth-child(even) { background: #f7f9fc; }
+    table.charges td { padding: 9px 12px; color: #333; }
+    table.charges td:last-child { text-align: right; font-weight: 600; }
+    table.charges .category {
+      font-size: 10px;
+      color: #888;
+      display: block;
+    }
+
+    /* ── Totals ── */
+    .totals-wrapper { display: flex; justify-content: flex-end; margin-bottom: 24px; }
+    .totals-box { width: 300px; }
+    .totals-box table { width: 100%; font-size: 13px; border-collapse: collapse; }
+    .totals-box td { padding: 5px 8px; }
+    .totals-box .label { color: #555; }
+    .totals-box .amount { text-align: right; font-weight: 600; }
+    .totals-box tr.subtotal td { border-top: 1px solid #ddd; }
+    .totals-box tr.grand-total {
+      background: #1a3a5c;
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .totals-box tr.grand-total td { padding: 10px 8px; }
+
+    /* ── Payment Info ── */
+    .payment-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 1px solid #d8e4f0;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      background: #f7f9fc;
+    }
+    .payment-block h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 6px; }
+    .payment-status {
+      display: inline-block;
+      background: #27ae60;
+      color: #fff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+    .cc-badge {
+      background: #1a3a5c;
+      color: #c8a84b;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* ── Footer ── */
+    .footer-note {
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 14px;
+      line-height: 1.8;
+    }
+    .gstin-bar {
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 8px 14px;
+      font-size: 11px;
+      color: #555;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .invoice { box-shadow: none; border: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="invoice">
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <div>
+      <div class="hotel-name">GRAND MERIDIAN HOTEL</div>
+      <div class="hotel-tagline">A Luxury International Collection Property ★★★★★</div>
+      <div class="hotel-address">
+        14 Marina Promenade, Connaught Lane<br/>
+        New Delhi – 110 001 &nbsp;|&nbsp; India<br/>
+        Tel: +91-11-4567-8900 &nbsp;|&nbsp; reservations@grandmeridian.in
+      </div>
+    </div>
+    <div class="invoice-meta">
+      <div class="badge">TAX INVOICE</div>
+      <table>
+        <tr><td>Invoice No.</td><td>GMH/2026/04/8871</td></tr>
+        <tr><td>Invoice Date</td><td>19 April 2026</td></tr>
+        <tr><td>Folio No.</td><td>F-49201</td></tr>
+        <tr><td>Reservation ID</td><td>RES-78543</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── GSTIN ── -->
+  <div class="gstin-bar">
+    <span>GSTIN: 07AABCG1234M1ZQ &nbsp;|&nbsp; SAC Code: 996311 &nbsp;|&nbsp; PAN: AABCG1234M</span>
+    <span>Place of Supply: Delhi (07)</span>
+  </div>
+
+  <!-- ── GUEST INFO ── -->
+  <div class="guest-section">
+    <div class="guest-block">
+      <h4>Guest Name</h4>
+      <p>Rajesh Sharma</p>
+    </div>
+    <div class="guest-block">
+      <h4>Check-In</h4>
+      <p>18 April 2026 <span style="font-size:11px">(14:00 hrs)</span></p>
+    </div>
+    <div class="guest-block">
+      <h4>Check-Out</h4>
+      <p>19 April 2026 <span style="font-size:11px">(12:00 hrs)</span></p>
+    </div>
+    <div class="guest-block">
+      <h4>Room</h4>
+      <p>512 – Deluxe King</p>
+    </div>
+    <div class="guest-block">
+      <h4>Nights</h4>
+      <p>1 Night</p>
+    </div>
+  </div>
+
+  <!-- ── CHARGES ── -->
+  <div class="charges-title">Room & Services Charges</div>
+  <table class="charges">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Qty</th>
+        <th>Unit Rate (₹)</th>
+        <th>Amount (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>18 Apr 2026</td>
+        <td>
+          Deluxe King Room – Room Tariff
+          <span class="category">Room No. 512 | SAC 996311</span>
+        </td>
+        <td>1 Night</td>
+        <td>4,200.00</td>
+        <td>4,200.00</td>
+      </tr>
+      <tr>
+        <td>18 Apr 2026</td>
+        <td>
+          In-Room Dining – Dinner
+          <span class="category">Order #IRD-2284 | 21:35 hrs</span>
+        </td>
+        <td>1</td>
+        <td>680.00</td>
+        <td>680.00</td>
+      </tr>
+      <tr>
+        <td>19 Apr 2026</td>
+        <td>
+          Breakfast Buffet – Club Floor
+          <span class="category">2 Covers | Restaurant: The Pavilion</span>
+        </td>
+        <td>1</td>
+        <td>350.00</td>
+        <td>350.00</td>
+      </tr>
+      <tr>
+        <td>19 Apr 2026</td>
+        <td>
+          Airport Transfer – Sedan
+          <span class="category">IGI Airport T3 | Dep: 11:30 hrs</span>
+        </td>
+        <td>1</td>
+        <td>420.00</td>
+        <td>420.00</td>
+      </tr>
+      <tr>
+        <td>19 Apr 2026</td>
+        <td>
+          Late Check-Out Fee (until 14:00)
+          <span class="category">Extended by 2 hours</span>
+        </td>
+        <td>1</td>
+        <td>0.00</td>
+        <td>0.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── TOTALS ── -->
+  <div class="totals-wrapper">
+    <div class="totals-box">
+      <table>
+        <tr>
+          <td class="label">Sub-Total</td>
+          <td class="amount">₹5,650.00</td>
+        </tr>
+        <tr>
+          <td class="label">CGST @ 6%</td>
+          <td class="amount">₹174.50</td>
+        </tr>
+        <tr>
+          <td class="label">SGST @ 6%</td>
+          <td class="amount">₹174.50</td>
+        </tr>
+        <tr class="subtotal">
+          <td class="label">Total Tax (GST 12%)</td>
+          <td class="amount">₹349.00</td>
+        </tr>
+        <tr class="subtotal">
+          <td class="label">Rounding</td>
+          <td class="amount">₹0.00</td>
+        </tr>
+        <tr class="grand-total">
+          <td>TOTAL AMOUNT</td>
+          <td style="text-align:right">₹5,999.00</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── PAYMENT ── -->
+  <div class="payment-section">
+    <div class="payment-block">
+      <h4>Payment Method</h4>
+      <span class="cc-badge">CREDIT CARD</span>&nbsp;
+      <span style="font-size:12px; color:#444;">VISA ···· ···· ···· 4821</span>
+    </div>
+    <div class="payment-block">
+      <h4>Transaction Reference</h4>
+      <p style="font-size:13px; font-weight:bold; color:#1a3a5c;">TXN-GMH-20260419-5999</p>
+      <p style="font-size:11px; color:#666;">Auth Code: VX7821 &nbsp;|&nbsp; 19 Apr 2026, 12:04 hrs</p>
+    </div>
+    <div class="payment-block">
+      <h4>Payment Status</h4>
+      <span class="payment-status">✔ PAID IN FULL</span>
+    </div>
+    <div class="payment-block">
+      <h4>Amount Charged</h4>
+      <p style="font-size:18px; font-weight:900; color:#1a3a5c;">₹5,999.00</p>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-note">
+    Thank you for staying with Grand Meridian Hotel, New Delhi. We hope to welcome you again soon.<br/>
+    For billing queries, please contact: accounts@grandmeridian.in &nbsp;|&nbsp; +91-11-4567-8920<br/><br/>
+    <strong>This is a computer-generated invoice and does not require a signature.</strong><br/>
+    Rates are inclusive of applicable taxes as per Government of India notification.
+  </div>
+
+</div>
+</body>
+</html>

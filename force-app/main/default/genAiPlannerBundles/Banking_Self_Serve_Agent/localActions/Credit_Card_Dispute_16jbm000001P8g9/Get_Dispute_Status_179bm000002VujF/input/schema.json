@@ -1,0 +1,21 @@
+{
+  "required" : [ "contactEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "contactEmail" : {
+      "title" : "Customer Email",
+      "description" : "contact email of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "caseNumber" : {
+      "title" : "Case Number",
+      "description" : "optional case number if customer provides it directly",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,28 @@
+{
+  "required" : [ "contactEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "accountTypeFilter" : {
+      "title" : "Account Type Filter",
+      "description" : "account type filter",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "contactEmail" : {
+      "title" : "Customer Email",
+      "description" : "contact email",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "numberOfTransactions" : {
+      "title" : "Number of Transactions",
+      "description" : "number of transactions",
+      "lightning:type" : "lightning__integerType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

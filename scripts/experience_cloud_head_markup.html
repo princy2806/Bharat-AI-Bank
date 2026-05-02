@@ -1,0 +1,207 @@
+<!--
+  Bharat AI Bank — Experience Cloud Head Markup
+  Paste this entire block into:
+  Experience Builder → Settings (gear) → Advanced → Edit Head Markup
+-->
+
+<style>
+
+/* ════════════════════════════════════════════════════════
+   1. GOOGLE FONTS — Premium banking typography
+════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ════════════════════════════════════════════════════════
+   2. HIDE BEACH HERO / TEMPLATE HERO (all possible selectors)
+════════════════════════════════════════════════════════ */
+.heroRegion,
+.siteHeroRegion,
+.templateHero,
+.cHero,
+.forceCommunityHeroComponent,
+.comm-layout-column > .cHero,
+[class*="heroRegion"],
+[class*="siteHero"],
+[data-component-id="hero"],
+.forceCommunityHero,
+.hero-container,
+.siteHeroSection,
+.heroSection {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    visibility: hidden !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   3. GLOBAL FONT
+════════════════════════════════════════════════════════ */
+body,
+.siteforceBody,
+.siteContent,
+.forceCommunityGlobalNavigation,
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   4. NAVIGATION BAR — Full navy banking style
+════════════════════════════════════════════════════════ */
+
+/* Main nav container */
+.comm-layout-column.HEADER,
+.siteHeader,
+.forceCommunityGlobalNavigation,
+nav.comm-layout-column,
+.forceCommunityGlobalNavContainer,
+.navContainer,
+.navbarContainer,
+.siteHeaderWrapper,
+header.comm-layout-column,
+.forceCommunityHeader,
+.siteNavigation,
+[class*="navigation"],
+[class*="globalNav"],
+.siteforceNavigationMenu {
+    background: linear-gradient(135deg, #001232 0%, #001f4d 100%) !important;
+    border-bottom: 2px solid #D4A017 !important;
+    box-shadow: 0 4px 20px rgba(0, 18, 50, 0.4) !important;
+}
+
+/* Nav brand / site name */
+.forceCommunityGlobalNavigation .brandName,
+.navBrand,
+.siteName,
+.siteNameText,
+.brandingLogo,
+[class*="brandName"],
+[class*="siteName"] {
+    color: #D4A017 !important;
+    font-weight: 900 !important;
+    font-size: 20px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Nav menu items */
+.navMenuItem a,
+.navMenuItem span,
+.forceCommunityGlobalNavigation a,
+.forceCommunityNavigationMenuItems a,
+.siteNavigationItem a,
+[class*="navItem"] a,
+[class*="navLink"] {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 600 !important;
+    font-size: 13.5px !important;
+    letter-spacing: 0.2px !important;
+    text-decoration: none !important;
+    padding: 8px 16px !important;
+    transition: color 0.2s !important;
+}
+
+/* Nav item hover */
+.navMenuItem:hover a,
+.navMenuItem:hover span,
+.siteNavigationItem:hover a {
+    color: #D4A017 !important;
+}
+
+/* Nav item active/selected */
+.navMenuItem.selected a,
+.navMenuItem.active a,
+.siteNavigationItem.selected a {
+    color: #D4A017 !important;
+    border-bottom: 2px solid #D4A017 !important;
+}
+
+/* Notification bell / profile icon */
+.forceCommunityGlobalNavigation .notificationBtn,
+.forceCommunityGlobalNavigation .profileIcon,
+.forceCommunityGlobalNavigation svg,
+.siteHeaderIcon {
+    color: rgba(255,255,255,0.7) !important;
+    fill: rgba(255,255,255,0.7) !important;
+}
+
+/* Search bar in nav */
+.forceCommunityGlobalNavigation input,
+.navSearch input {
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   5. PAGE BACKGROUND
+════════════════════════════════════════════════════════ */
+body,
+.siteContent,
+.siteforceContentArea,
+.forceCommunityContentWrapper,
+.contentWrapper {
+    background: #f2f5fa !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   6. SECTION PADDING FIX — Make LWC full width
+════════════════════════════════════════════════════════ */
+.siteContent .cSection,
+.forceCommunitySection,
+.comm-layout-column.MAIN,
+.siteContentWrapper > * {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Remove section column padding that boxes the component */
+.siteContent .cColumn,
+.forceCommunityColumn,
+.comm-layout-column.CONTENT {
+    padding: 0 !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   7. FOOTER STYLING
+════════════════════════════════════════════════════════ */
+.siteforceFooter,
+.forceCommunityGlobalFooter,
+footer.comm-layout-column {
+    display: none !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   8. COMPACT HEADER AREA
+════════════════════════════════════════════════════════ */
+.comm-layout-column.HEADER .compactHeader,
+.forceCommunityCompactHeader {
+    background: linear-gradient(135deg, #001232 0%, #001f4d 100%) !important;
+    border-bottom: 2px solid #D4A017 !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   9. SCROLLBAR STYLING
+════════════════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f2f5fa; }
+::-webkit-scrollbar-thumb { background: #0057B8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #001f4d; }
+
+/* ════════════════════════════════════════════════════════
+   10. REMOVE EXTRA TOP SPACE LEFT BY HIDDEN HERO
+════════════════════════════════════════════════════════ */
+.siteforceContentArea {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+.siteContent > div:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+</style>

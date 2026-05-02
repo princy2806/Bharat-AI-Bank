@@ -1,0 +1,42 @@
+{
+  "required" : [ "contactEmail", "disputedAmount" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "contactEmail" : {
+      "title" : "Customer Email",
+      "description" : "contact email of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "disputedAmount" : {
+      "title" : "Disputed Amount",
+      "description" : "approximate disputed transaction amount",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "merchantName" : {
+      "title" : "Merchant Name or Location",
+      "description" : "merchant name or location of the disputed transaction",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "transactionDate" : {
+      "title" : "Transaction Date",
+      "description" : "date of the disputed transaction in YYYY-MM-DD format",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "disputeReason" : {
+      "title" : "Dispute Reason",
+      "description" : "reason for the dispute e.g. unauthorized charge, duplicate charge",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

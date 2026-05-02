@@ -1,0 +1,21 @@
+{
+  "required" : [ "contactEmail", "idpConfigurationIdOrName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "contactEmail" : {
+      "title" : "Customer Email",
+      "description" : "contact email of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "idpConfigurationIdOrName" : {
+      "title" : "IDP Configuration ID or Name",
+      "description" : "name or ID of the Document AI IDP configuration to use for extraction",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
