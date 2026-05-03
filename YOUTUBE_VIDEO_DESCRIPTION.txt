@@ -1,0 +1,196 @@
+🏦 BHARAT AI BANK - Intelligent Banking with Salesforce Agentforce
+
+Watch how we transform banking from a frustrating 7-10 day process into a seamless 2-minute conversation!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 PROJECT OVERVIEW
+
+Bharat AI Bank is an AI-powered banking solution built on Salesforce Agentforce that delivers:
+
+✅ Credit Card Dispute Resolution in 90 seconds (vs 7-10 days)
+✅ Intelligent Document Processing with Document AI/IDP
+✅ Multilingual Support (English & Hindi)
+✅ Real-time Account Balance & Statement Access
+✅ Autonomous EMI Restructuring & Callback Scheduling
+✅ Zero Manual Processing - Fully Automated
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📽️ IN THIS DEMO VIDEO
+
+**Scenario 1: Account Balance & Statement Check (2-3 min)**
+- Customer asks for account balance in Hindi
+- Agent responds with real-time data: ₹97,650
+- Generates and emails 30-day statement PDF instantly
+
+**Scenario 2: Credit Card Dispute (3-4 min)**
+- Fraudulent transaction detected: ₹5,999
+- Customer uploads credit card statement
+- Document AI instantly extracts transaction details
+- Salesforce Case created automatically (Case #DIS-2025-00845)
+- Real-time tracking provided with SMS & email confirmation
+
+**Scenario 3: EMI Restructuring (4-5 min)**
+- Family emergency: Need to reduce home loan EMI
+- Agent shows 3 restructuring options
+- Option A selected: EMI reduced from ₹25,000 to ₹18,500
+- Relationship Manager callback scheduled for next day (10 AM - 12 PM)
+- All confirmations sent via email & SMS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🛠️ TECHNOLOGY STACK
+
+🤖 **Salesforce Agentforce** - GenAI Planner with ReAct Reasoning
+📄 **Document AI / IDP** - Intelligent Document Processing
+☁️ **Salesforce Service Cloud** - CRM & Case Management
+⚙️ **Apex & Flows** - Business Logic Automation
+🌐 **Experience Cloud** - Customer Chat Interface
+💻 **LWC** - Custom Lightning Web Components
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 BUSINESS IMPACT
+
+💰 Reduce dispute resolution from 7-10 days to 90 seconds
+📉 Eliminate 70% of call centre load with AI automation
+🌍 24×7 multilingual support (English & Hindi)
+✨ Personalized, transparent customer experience
+📋 Complete audit trail for regulatory compliance
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👥 TEAM MEMBERS
+
+🎯 **Princy Shah** - Salesforce Tech Lead, Accenture
+   - GenAI Planner Architecture, Apex Development, Document AI Integration
+
+🎯 **Shraddha Dere** - Salesforce Tech Lead, Accenture
+   - Agent Topic Instructions, Multilingual Flows, Testing & QA
+
+🎯 **Ankur Omar** - Salesforce Manager, Accenture
+   - Solution Architecture, BFSI Domain Expertise, Use Case Design
+
+🎯 **Ravi Kamal** - Salesforce Tech Lead, Accenture
+   - Experience Cloud Portal, LWC Styling, Omnichannel Routing, Demo Video
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 RESOURCES & LINKS
+
+GitHub Repository:
+https://github.com/princy2806/Bharat-AI-Bank
+
+Project Documentation:
+- Hackathon Submission: [Link to submission document]
+- Architecture Design: See GitHub README
+- Implementation Guide: In GitHub /docs folder
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 KEY FEATURES DEMONSTRATED
+
+✨ **GenAI Planner with ReAct Reasoning**
+   - Understands customer intent in multiple languages
+   - Makes autonomous decisions (dispute filing, EMI calc, callback scheduling)
+   - Executes actions without human intervention
+
+✨ **Document AI / Intelligent Document Processing**
+   - Reads PDFs, images, documents instantly
+   - Extracts structured data (amount, date, merchant, ID details)
+   - Zero manual data entry required
+
+✨ **Salesforce Service Cloud Integration**
+   - Cases auto-created for disputes
+   - Real-time status tracking
+   - Full audit trail for compliance
+
+✨ **Multilingual Support**
+   - Responds in customer's preferred language (Hindi or English)
+   - Natural language understanding in each language
+   - Context-aware responses
+
+✨ **Experience Cloud Chat**
+   - Beautiful, responsive interface
+   - Works on mobile, tablet, desktop
+   - BFSI-compliant security
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ FAQ
+
+Q: Is this production-ready?
+A: This is a hackathon proof-of-concept. Production deployment would require additional security hardening, compliance certifications, and scaled infrastructure.
+
+Q: What languages are supported?
+A: Currently English and Hindi. Can be extended to other Indian regional languages (Tamil, Telugu, Kannada, etc.)
+
+Q: How fast is Document AI processing?
+A: Typically 2-3 seconds per document, including data extraction and Salesforce case creation.
+
+Q: Can this handle complex disputes?
+A: Simple disputes are fully automated. Complex disputes are escalated to human agents via Omnichannel routing.
+
+Q: What's the cost of implementation?
+A: Depends on org scale and volume. See GitHub README for cost estimates.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🏆 HACKATHON INFORMATION
+
+🎯 **Hackathon:** Salesforce Agentforce Hackathon 2025
+🏢 **Team:** AgentX Innovators
+🏭 **Company:** Accenture
+🌍 **Region:** India
+📅 **Submission Date:** May 2025
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📢 HASHTAGS
+
+#Salesforce #Agentforce #DocumentAI #BankingAI #FinTech #Automation #IndianTech #Accenture #AgentX #HackathonSubmission #SalesforceAgentforce #BharatAIBank
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔗 CONNECT WITH US
+
+📧 Team Inquiry: princy.shah@accenture.com
+💼 LinkedIn: [Add team member LinkedIn profiles]
+🐙 GitHub: https://github.com/princy2806/Bharat-AI-Bank
+🌐 Visit our hackathon submission for full details
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👍 Like, Subscribe & Share!
+
+If you're interested in Salesforce Agentforce, Document AI, or FinTech solutions, please:
+✅ Like this video
+✅ Subscribe to our channel
+✅ Turn on notifications
+✅ Share with your network
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🙏 Thank You!
+
+Thank you for watching Bharat AI Bank! This is Team AgentX Innovators demonstrating the future of intelligent, AI-powered banking.
+
+Questions? Ideas? Feedback? Comment below! 👇
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚖️ DISCLAIMER
+
+This is a proof-of-concept demonstration for hackathon purposes. Data shown is fictional.
+Any resemblance to real bank accounts, transactions, or individuals is coincidental.
+For production use, ensure compliance with local banking regulations and data privacy laws.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Video Production: Team AgentX Innovators
+Music: [Royalty-free background music]
+Platform: Salesforce
+License: MIT (See GitHub for full license)
+
+© 2025 Team AgentX Innovators. All rights reserved.

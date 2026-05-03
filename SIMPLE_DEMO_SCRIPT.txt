@@ -1,0 +1,180 @@
+================================================================================
+BHARAT AI BANK - DEMO SCRIPT
+Team: AgentX Innovators | Accenture
+Duration: 5 Minutes
+================================================================================
+
+[OPENING - 30 SECONDS]
+================================================================================
+
+Hello! I'm Princy Shah from Team AgentX Innovators at Accenture.
+
+Today I'm showing you Bharat AI Bank — an intelligent banking solution
+powered by Salesforce Agentforce.
+
+Watch how we transform banking from a frustrating 7-to-10 day process
+into a simple 2-minute conversation.
+
+[END OPENING - 0:30]
+
+================================================================================
+[PROBLEM - 1 MINUTE]
+================================================================================
+
+Let me show you a real customer problem.
+
+Meet Rahul. He notices a fraudulent transaction of Rs 4,500 on his credit card.
+
+In traditional banking, here's what happens:
+
+He calls the bank... waits 25 minutes on hold... gets stuck with an IVR
+that doesn't understand Hindi... gets transferred three times...
+
+Finally, someone tells him to visit the branch with documents.
+
+He fills out a paper form and is told: "Resolution takes 7 to 10 business days."
+
+No transparency. No updates. He's frustrated. He considers switching banks.
+
+[END PROBLEM - 1:30]
+
+================================================================================
+[SOLUTION DEMO - 2 MINUTES 30 SECONDS]
+================================================================================
+
+Now watch what happens with Bharat AI Bank.
+
+Rahul opens the app and starts a chat.
+
+He types: "I want to dispute a transaction of Rs 4,500."
+
+Our Agentforce AI agent responds instantly — in Hindi:
+
+"नमस्ते! कृपया अपनी रसीद अपलोड करें।"
+(Hello! Please upload your receipt.)
+
+Rahul uploads his credit card statement PDF.
+
+[PAUSE - Let document upload happen on screen - 5 seconds]
+
+Here's the magic. Our Document AI technology instantly:
+
+- Reads the PDF
+- Extracts the amount: Rs 4,500
+- Identifies the merchant and date
+- Populates all required fields
+- All in under 2 seconds
+
+[PAUSE - Show data extraction on screen - 5 seconds]
+
+Behind the scenes in Salesforce:
+
+A Case is automatically created — HIGH PRIORITY, assigned to fraud team,
+full audit trail logged.
+
+The agent responds:
+
+"आपके विवाद की शिकायत दर्ज हो गई है! केस नंबर: 12345।
+यहाँ status check करें।"
+(Your dispute is filed! Case number: 12345. Check status here.)
+
+Rahul immediately gets:
+
+- Case confirmation number
+- Real-time tracking link
+- SMS notification
+- Email confirmation
+
+[PAUSE - Show confirmations - 5 seconds]
+
+Rahul also asks: "मेरा current balance क्या है?"
+(What's my balance?)
+
+The agent instantly responds with live data:
+
+- Current balance: Rs 97,650
+- Available credit: Rs 2,15,000
+- Outstanding due: Rs 45,000
+- Payment due date: May 15
+
+No manual lookup. No waiting. Instant.
+
+[END SOLUTION DEMO - 4:00]
+
+================================================================================
+[IMPACT - 45 SECONDS]
+================================================================================
+
+Compare the results:
+
+TRADITIONAL BANKING:
+❌ 7 to 10 days
+❌ Multiple branch visits
+❌ Paper forms
+❌ No transparency
+❌ Manual processing
+
+BHARAT AI BANK:
+✅ 90 seconds — Dispute filed
+✅ Zero branch visits
+✅ Fully automated
+✅ Real-time updates
+✅ Multilingual support
+
+That's what Bharat AI Bank delivers.
+
+[END IMPACT - 4:45]
+
+================================================================================
+[CLOSING - 15 SECONDS]
+================================================================================
+
+AI that understands Indian customers.
+
+Banking in 90 seconds, not 7 to 10 days.
+
+Built on Salesforce Agentforce.
+
+Delivered by Team AgentX Innovators.
+
+Thank you!
+
+[END CLOSING - 5:00]
+
+================================================================================
+END OF SCRIPT
+================================================================================
+
+KEY NOTES:
+----------
+
+SPEAKING PACE:
+- Speak at 130-140 words per minute
+- Natural, conversational tone
+- Pause after important statements (2-3 seconds)
+
+SCREEN PAUSES:
+- When uploading PDF: Pause 5 seconds
+- When showing data extraction: Pause 5 seconds
+- When showing confirmations: Pause 5 seconds
+
+HINDI PRONUNCIATION:
+- नमस्ते (Namaste) = nuh-MUS-tay
+- रसीद (Receipt) = ruh-SEED
+- विवाद (Dispute) = vi-VAHD
+- केस (Case) = CASE (same as English)
+
+TONE:
+- Opening: Professional, confident, friendly
+- Problem: Show concern, empathy
+- Solution: Show excitement, explain clearly
+- Impact: Show results, pride in work
+- Closing: Warm, thank you
+
+VOICE MODULATION:
+- Vary your tone — don't be monotone
+- Emphasize numbers: "Rs 4,500", "90 seconds", "7-10 days"
+- Slow down for important points
+- Speed up slightly when excited about features
+
+================================================================================
